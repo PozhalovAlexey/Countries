@@ -5,6 +5,4 @@ export const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 2em;
-  box-shadow: ${({ theme }) => theme.shadow};
-  background-color: ${({theme})=>theme.backgroundColor}
 `

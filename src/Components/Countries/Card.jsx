@@ -13,24 +13,25 @@ const CardImage = styled.img`
   display: block;
   width: 100%;
   height: 150px;
+  box-shadow: ${({ theme }) => theme.shadow};
   object-fit: cover;
   object-position: center;
-  box-shadow: ${({ theme }) => theme.shadow};
 `;
 
 const CardBody = styled.div`
-  padding: 1rem 1rem 1rem 1.3rem;
+  padding: 1rem 1.5rem 2rem;
 `;
 
 const CardTitle = styled.h3`
   font-size: 20px;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
   font-weight: bold;
 `;
 
 const CardList = styled.ul`
   list-style: none;
   padding: 0.7rem;
+  margin: 0;
 `;
 
 const CardListItem = styled.li`
@@ -38,12 +39,10 @@ const CardListItem = styled.li`
   line-height: 1.5rem;
 `;
 
-
 const Card = ({ country }) => {
-  const navigator = useNavigate();
-
+  const navigate = useNavigate();
   const toCardPage = () => {
-    navigator(`pages/${country.name.common}`);
+    navigate(`pages/${country.name.common}`);
   };
   return (
     <Wrapper onClick={toCardPage}>

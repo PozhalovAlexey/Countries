@@ -4,10 +4,9 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   width: 100%;
   padding: 2rem 0;
-
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 
   @media (min-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
@@ -21,7 +20,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const List = ({children}) => {
+const List = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 

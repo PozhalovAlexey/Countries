@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   @media (min-width: 767px) {
     grid-template-columns: minmax(100px, 400px) 1fr;
     align-items: center;
-    gap: 5rem;
+    gap: 4rem;
   }
   @media (min-width: 1024px) {
     grid-template-columns: minmax(400px, 600px) 1fr;
@@ -78,8 +78,9 @@ const TagGroup = styled.div`
 
 const Tag = styled.span`
   padding: 0 1rem;
-  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
-  box-shadow: ${({ theme: { shadow } }) => shadow};
+  line-height: 1.5;
+  background-color: ${({ theme }) => theme.main};
+  box-shadow: ${({ theme }) => theme.shadow};
   cursor: pointer;
 `;
 

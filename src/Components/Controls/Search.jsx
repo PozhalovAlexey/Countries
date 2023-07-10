@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 const InputContainer = styled.label`
   background-color: ${({ theme }) => theme.backgroundColor};
-  color:${({ theme }) => theme.color}
-  
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -17,8 +15,6 @@ const InputContainer = styled.label`
   @media (min-width: 767px) {
     margin-bottom: 0;
     width: 280px;
-    background-color: ${({ theme }) => theme.backgroundColor};
-    color:${({ theme }) => theme.color}
   }
 `;
 const Input = styled.input.attrs({

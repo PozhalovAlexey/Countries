@@ -1,25 +1,21 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Button = styled.button`
   padding: 0 1rem;
-  background-color: ${({theme}) => theme.backgroundColor};
-  box-shadow: ${({theme})=>theme.boxShadow};
   border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  line-height: 2.5;
+  color: ${({ theme }) => theme.color};
+  box-shadow: ${({theme})=>theme.shadow};
+  background-color: ${({theme})=>theme.main};
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  color: ${({theme})=>theme.color};
-  cursor: pointer;
-  
-`
+`;
 
-export const BackButton = ({onClick}) => {
-    return (
-        <Button onClick={onClick}>
-            Back
-        </Button>
-    );
+export const BackButton = ({ onClick }) => {
+  return <Button onClick={onClick}>Back</Button>;
 };
 
 export default BackButton;

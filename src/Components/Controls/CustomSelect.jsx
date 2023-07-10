@@ -1,37 +1,28 @@
+import React from "react";
 import styled from "styled-components";
-import Select from "react-select";
 
-export const CustomSelect = styled(Select).attrs({
-  styles: {
-    control: (provided) => ({
-      ...provided,
-      backgroundColor: `${({ theme }) => theme.backgroundColor}`,
-      color: `${({ theme }) => theme.color}`,
-      borderRadius: "0.5rem",
-      padding: "0.2rem",
-      border: "none",
-      boxShadow: `${({ theme }) => theme.shadow}`,
-      height: "40px",
 
-    }),
-    option: (provided) => ({
-      ...provided,
-      cursor: "pointer",
-      color: `${({ theme }) => theme.color}`,
-      background: `${({ theme }) => theme.backgroundColor}`,
-    }),
-  },
-})`
+const CustomStyledSelect = styled.select`
   width: 200px;
   border-radius: 0.5rem;
   font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
-
-  & > * {
-    box-shadow: ${({ theme }) => theme.shadow};
+  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.color};
+  height: 40px;
+  box-shadow: ${({ theme }) => theme.shadow};
+  padding: 4px 8px;
+  option {
+    cursor: pointer;
+    color: ${({ theme }) => theme.color};
+    background: ${({ theme }) => theme.backgroundColor};
   }
 
-  & > * {
-    color: ${({ theme }) => theme.color};
+  &:focus {
+    outline: none;
   }
 `;
+
+export default CustomStyledSelect;

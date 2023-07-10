@@ -1,16 +1,13 @@
-import React, {useEffect} from "react";
-import {useState} from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import Search from "./Search";
-import {CustomSelect} from "./CustomSelect";
+import CustomStyledSelect from "./CustomSelect";
 import styled from "styled-components";
-
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: ${({theme}) => theme.color}
-  background-color: ${({theme}) => theme.backgroundColor};
   @media (min-width: 767px) {
     flex-direction: row;
     justify-content: space-between;
@@ -23,20 +20,27 @@ const Controls = ({ onSearch, regions }) => {
   const [region, setRegion] = useState("");
 
   useEffect(() => {
-    const regionValue = region?.value || "";
-    onSearch(search, regionValue);
+    const regionValue = region || "";
+    if (typeof onSearch === "function") {
+      onSearch(search, regionValue);
+    }
   }, [search, region]);
   return (
     <Wrapper>
       <Search search={search} setSearch={setSearch} />
-      <CustomSelect
-        options={regions}
+
+      <CustomStyledSelect
+        isRequired
         placeholder="Filtered by region"
-        isClearable
-        isSearchable={false}
         value={region}
-        onChange={setRegion}
-      />
+        isClearable
+        isSearchable = {false}
+        onChange={(e) => setRegion(e.target.value)}
+      >
+        {regions.map((r) => (
+          <option value={r.value}>{r.label.toUpperCase()}</option>
+        ))}
+      </CustomStyledSelect>
     </Wrapper>
   );
 };

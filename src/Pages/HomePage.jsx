@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ALL_COUNTRIES, searchByCountry, searchByRegion } from "../Config";
+import { ALL_COUNTRIES, searchByRegion } from "../Config";
 import React, { useEffect, useState } from "react";
 import Controls from "../Components/Controls/Controls";
 import Card from "../Components/Countries/Card";
@@ -41,7 +41,6 @@ const HomePage = () => {
   useEffect(() => {
     getCountries();
   }, []);
-
   return (
     <>
       <Controls onSearch={handleSearch} regions={regions} />

@@ -5,27 +5,25 @@ import Wrapper from "./Wrapper";
 import { IoMoon } from "react-icons/io5";
 import ModeSwitcher from "./ModeSwitcher";
 
-const Title = styled.a.attrs({ href: "/" })`
-  color: ${({ theme }) => theme.color};
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-  background-color: ${({ theme }) => theme.main};
-`;
-
-const HeaderEl = styled.header`
-  background-color: ${({ theme }) => theme.backgroundColor}
-  box-shadow: ${({theme})=>theme.main};
-`;
-
 const Header = ({ toggleMode }) => {
   const theme = useContext(ThemeContext);
+
+  const Title = styled.a.attrs({ href: "/" })`
+    color: ${({ theme }) => theme.color};
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+  `;
+
+  const HeaderEl = styled.header`
+  background-color: ${({ theme }) => theme.main};
+`;
 
   return (
     <HeaderEl>
       <Container>
         <Wrapper>
-          <Title>Where is the world?</Title>
+          <Title id="top">Where is the world?</Title>
           <ModeSwitcher theme={theme} toggleMode={toggleMode}>
             <IoMoon />
           </ModeSwitcher>
